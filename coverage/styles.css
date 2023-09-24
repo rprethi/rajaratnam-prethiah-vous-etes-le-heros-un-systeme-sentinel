@@ -1,0 +1,70 @@
+@font-face {
+    src: url("./assets/font/machine_2/MACHINE.otf") format("opentype");
+    font-family: "Machine";
+}
+
+@font-face {
+    src: url("./assets/font/Merriweather/Merriweather-Regular.ttf") format("truetype");
+    font-family: "Merriweather";
+}
+
+#jeu {
+    min-height: 100px;
+    min-width: 400px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #1b4332;
+    color: #b7e4c7;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Machine";
+    font-size: 100px;
+}
+
+h3 {
+    font-family: "Merriweather";
+}
+
+p {
+    font-family: "Merriweather";
+    margin: 15px;
+}
+
+button {
+    background-color: #D8F3DC;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #D8F3DC;
+    color: #2d6a4f;
+    font-size: 15px;
+}
+
+#boutton {
+    justify-content: space-around;
+    width: 100%;
+    display: flex;
+}
+
+#image {
+    max-width: 100%;
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+body {
+    background-color: #74c690;
+}
