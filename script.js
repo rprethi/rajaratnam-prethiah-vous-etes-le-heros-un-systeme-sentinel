@@ -44,4 +44,4 @@ function goToChapter(chapter) {
         console.log(document.querySelector("#boutton".innerHTMl = ""));
     }
 } 
-goToChapter(0)
+goToChapter(debut);
