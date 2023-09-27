@@ -2,7 +2,7 @@ let chapters = {
     debut: {
         titre: "L'éveil au moniteur silencieux",
         description: "Au réveil, une désorientation vous envahit, l'esprit engourdi par un sommeil factice. La lueur blafarde du moniteur numérique révèle une chambre austère, câbles mystérieux enchevêtrés autour de vous. La prise de conscience vous assaille : vous êtes prisonnier d'un monde dominé par la technologie. La Machine, baptisée Sentinel, scrute vos battements cardiaques, vos pensées, vous transformant en une marionnette de données et d'algorithmes, privée de libre arbitre. Comment en êtes-vous arrivé là ? Où est le monde connu ?",
-        image: "chambre,jpg",
+        image: "chambre.jpg",
         boutons: [{ titre: 'Relâcher les Câbles', destination: 'couloir' }, { titre: "Se Rendormir ", destination: "intoxication" }]
     },
     couloir: {
@@ -39,12 +39,12 @@ let chapters = {
 
 function goToChapter(cle) {
     if (typeof cle === "object") {
-        console.log(chapters[cle].titre);
-        console.log(chapters[cle].description);
-        console.log(chapters[cle].boutons);
+        console.log(cle.titre);
+        console.log(cle.description);
+        console.log(cle.boutons);
     }
     else {
         console.log("Mauvaise clé de chapitre");
     }
 }
-goToChapter("debut");
+goToChapter(chapters.debut);
