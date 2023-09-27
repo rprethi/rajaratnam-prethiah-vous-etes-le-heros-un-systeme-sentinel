@@ -1,22 +1,22 @@
-chapters = {
+let chapters = {
     debut: {
         titre: "L'éveil au moniteur silencieux",
         description: "Au réveil, une désorientation vous envahit, l'esprit engourdi par un sommeil factice. La lueur blafarde du moniteur numérique révèle une chambre austère, câbles mystérieux enchevêtrés autour de vous. La prise de conscience vous assaille : vous êtes prisonnier d'un monde dominé par la technologie. La Machine, baptisée Sentinel, scrute vos battements cardiaques, vos pensées, vous transformant en une marionnette de données et d'algorithmes, privée de libre arbitre. Comment en êtes-vous arrivé là ? Où est le monde connu ?",
         image: "chambre,jpg",
-        boutons: [{ titre: 'Relâcher les Câbles', destination: 'couloir' }, { titre: 'Se Rendormir ', destination: 'intoxication' }]
+        boutons: [{ titre: 'Relâcher les Câbles', destination: 'couloir' }, { titre: "Se Rendormir ", destination: "intoxication" }]
     },
     couloir: {
         titre: "L'éveil au moniteur silencieux",
         description: "Vous explorez la pièce métallique, cherchant des indices. Une fissure murale dévoile un étroit couloir éclairé faiblement. Un frisson mêlant excitation et crainte vous anime en vous aventurant dans l'obscurité, prêt à percer les mystères du monde dystopique. Alors que vous vous aventurez plus profondément dans le couloir, des voix indistinctes et des bruits énigmatiques emplissent l'air, créant un écho inquiétant. Les murmures semblent provenir de toutes parts, mais vous ne parvenez pas à discerner leur origine ni leur signification. Votre cœur s'accélère, votre curiosité et votre inquiétude grandissent à mesure que vous vous rapprochez de l'origine de ces mystérieux sons, ignorant ce qui vous attend dans l'obscurité.",
         image: "couloir.jpg",
-        boutons: [{ titre: 'Suivre le trajet ', destination: 'porte' }, { titre: 'Suivre les voix étranges', destination: 'mort' }]
+        boutons: [{ titre: "Suivre le trajet ", destination: "porte" }, { titre: "Suivre les voix étranges", destination: "mort" }]
     },
 
     porte: {
         titre: "L'éveil au moniteur silencieux",
         description: "À ce stade de l'exploration du couloir, vous découvrez une porte déverrouillée. Son apparence robuste et imposante trahit l'importance de ce qui se cache derrière. Une énigme de plus à résoudre dans ce monde dystopique, vous incitant à chercher la clé de la vérité. Près de cette porte, vous découvrez un masque à oxygène, une lueur d'espoir dans ce monde oppressant. Ses contours froids et métalliques révèlent une utilité cruciale dans cette réalité étrange. Vous vous demandez pourquoi il est là, si la pièce au-delà de la porte recèle des dangers pour votre souffle ou si c'est un indice pour votre quête. La décision de le prendre ou de le laisser repose sur vos épaules, une nouvelle énigme à résoudre dans ce labyrinthe dystopique.",
         image: "porte.jpg",
-        boutons: [{ titre: 'Prendre le masque ', destination: 'masque' }, { titre: 'Avancer sans prendre de masque', destination: 'mort' }]
+        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "mort" }]
     },
 
     masque: {
@@ -37,11 +37,14 @@ chapters = {
 
 };
 
-function goToChapter(chapter) {
-    if (chapter == true) {
-        console.log(document.querySelector("#jeu".innerHTMl = chapters[chapter][title]));
-        console.log(document.querySelector("#texte".innerHTMl = chapters[chapter][description]));
-        console.log(document.querySelector("#boutton".innerHTMl = ""));
+function goToChapter(cle) {
+    if (typeof cle === "object") {
+        console.log(chapters[cle].titre);
+        console.log(chapters[cle].description);
+        console.log(chapters[cle].boutons);
     }
-} 
-goToChapter(debut);
+    else {
+        console.log("Mauvaise clé de chapitre");
+    }
+}
+goToChapter("debut");
