@@ -67,7 +67,7 @@ function goToChapter(chapitre) {
             console.log(` Tapez goToChapter("${info.destination}")`);
         });
     } else {
-        console.log("🤡 Mauvaise clé de chapitre");
+        console.log("Mauvaise clé de chapitre");
     }
 }
 goToChapter("debut");
