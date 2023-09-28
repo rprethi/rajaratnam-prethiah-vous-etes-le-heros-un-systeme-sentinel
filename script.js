@@ -1,4 +1,4 @@
-chapters = {
+let chapters = {
     debut: {
         titre: "L'éveil au moniteur silencieux",
         description: "Au réveil, vous vous retrouvez attaché aux fils du motineur, emprisonné dans cet univers dystopique où la machine nommée Sentinel contrôle chaque aspect de votre existence.",
