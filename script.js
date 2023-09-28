@@ -9,7 +9,7 @@ chapters = {
     rendormir: {
         titre: "La Dose Fatale",
         description: "Les câbles du moniteur ont administré une dose qui vous a intoxiqué.",
-        image: "dose.jpg",
+        image: "./assets/image/dose.jpg",
         boutons: [{ titre: 'Recommencer', destination: 'debut' }]
     },
 
