@@ -16,42 +16,42 @@ chapters = {
     explorer: {
         titre: "À la Découverte du Couloir Caché",
         description: "En explorant la chambre, vous découvrez un couloir où des voix mystérieuses résonnent à vos oreilles.",
-        image: "couloir.jpg",
+        image: "./assets/image/couloir.jpg",
         boutons: [{ titre: "Suivre le trajet ", destination: "porte" }, { titre: "Suivre les voix étranges", destination: "mystere" }]
     },
 
     mystere: {
         titre: "Le Piège des Voix Étranges",
         description: "Les voix étranges étaient en réalité des agents de sécurité, et ils vous ont assommé.",
-        image: "securite.jpg",
+        image: "./assets/image/securite.jpg",
         boutons: [{ titre: "Recommencer ", destination: "debut" }]
     },
 
     porte: {
         titre: "À la Découverte du Masque d'oxygène",
         description: "Vous découvrez une porte déverrouillée, à côté de laquelle se trouve un masque à oxygène.",
-        image: "porte.jpg",
+        image: "./assets/image/porte.jpg",
         boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "piege" }]
     },
 
     masque: {
         titre: "Une protection efficace",
         description: "Vous tenez un masque dans vos mains et apercevez la lumière du jour. Avez-vous mis votre masque?",
-        image: "chemin.jpg",
+        image: "./assets/image/chemin.jpg",
         boutons: [{ titre: 'Oui, vous avez votre masque', destination: 'lumiere' }]
     },
 
     piege: {
         titre: "Le Masque Oublié",
         description: "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Avez-vous votre masque?",
-        image: "chemin.jpg",
+        image: "./assets/image/chemin.jpg",
         boutons: [{ titre: 'Non, vous navez pas de masque', destination: 'debut' }]
     },
 
     lumiere: {
         titre: "Une autre chance à la vie?",
         description: "Vous avez sauvé votre peau et vous avez échappé à le Sentinel!",
-        image: "lumiere.jpg",
+        image: "./assets/image/lumiere.jpg",
     },
 };
 
