@@ -64,10 +64,10 @@ function goToChapter(chapitre) {
 
         chapters[chapitre].boutons.forEach((info) => {
             console.log(` ➤ ${info.titre}`);
-            console.log(`Tapez goToChapter("${info.destination}")`);
+            console.log(` Tapez goToChapter("${info.destination}")`);
         });
     } else {
-        console.log("Mauvaise clé de chapitre");
+        console.log("🤡 Mauvaise clé de chapitre");
     }
 }
 goToChapter("debut");
