@@ -1,36 +1,51 @@
 let chapters = {
     debut: {
         titre: "L'éveil au moniteur silencieux",
-        description: "Au réveil, une désorientation vous envahit, l'esprit engourdi par un sommeil factice. La lueur blafarde du moniteur numérique révèle une chambre austère, câbles mystérieux enchevêtrés autour de vous. La prise de conscience vous assaille : vous êtes prisonnier d'un monde dominé par la technologie. La Machine, baptisée Sentinel, scrute vos battements cardiaques, vos pensées, vous transformant en une marionnette de données et d'algorithmes, privée de libre arbitre. Comment en êtes-vous arrivé là ? Où est le monde connu ?",
+        description: "Au réveil, vous vous retrouvez attaché aux fils du motineur, emprisonné dans cet univers dystopique où la machine nommée Sentinel contrôle chaque aspect de votre existence.",
         image: "chambre.jpg",
         boutons: [{ titre: 'Relâcher les Câbles', destination: 'couloir' }, { titre: "Se Rendormir ", destination: "intoxication" }]
     },
+
+    intoxication: {
+        titre: "La Dose Fatale",
+        description: "Les câbles du moniteur ont administré une dose qui vous a intoxiqué.",
+        image: "chambre.jpg",
+        boutons: [{ titre: 'Recommencer', destination: 'debut' }]
+    },
+
     couloir: {
-        titre: "L'éveil au moniteur silencieux",
-        description: "Vous explorez la pièce métallique, cherchant des indices. Une fissure murale dévoile un étroit couloir éclairé faiblement. Un frisson mêlant excitation et crainte vous anime en vous aventurant dans l'obscurité, prêt à percer les mystères du monde dystopique. Alors que vous vous aventurez plus profondément dans le couloir, des voix indistinctes et des bruits énigmatiques emplissent l'air, créant un écho inquiétant. Les murmures semblent provenir de toutes parts, mais vous ne parvenez pas à discerner leur origine ni leur signification. Votre cœur s'accélère, votre curiosité et votre inquiétude grandissent à mesure que vous vous rapprochez de l'origine de ces mystérieux sons, ignorant ce qui vous attend dans l'obscurité.",
+        titre: "À la Découverte du Couloir Caché",
+        description: "En explorant la chambre, vous découvrez un couloir où des voix mystérieuses résonnent à vos oreilles.",
         image: "couloir.jpg",
-        boutons: [{ titre: "Suivre le trajet ", destination: "porte" }, { titre: "Suivre les voix étranges", destination: "mort" }]
+        boutons: [{ titre: "Suivre le trajet ", destination: "porte" }, { titre: "Suivre les voix étranges", destination: "securite" }]
+    },
+
+    securite: {
+        titre: "Le Piège des Voix Étranges",
+        description: "Les voix étranges étaient en réalité la sécurité, et elles vous ont assommé.",
+        image: "couloir.jpg",
+        boutons: [{ titre: "Recommencer ", destination: "debut" }]
     },
 
     porte: {
-        titre: "L'éveil au moniteur silencieux",
-        description: "À ce stade de l'exploration du couloir, vous découvrez une porte déverrouillée. Son apparence robuste et imposante trahit l'importance de ce qui se cache derrière. Une énigme de plus à résoudre dans ce monde dystopique, vous incitant à chercher la clé de la vérité. Près de cette porte, vous découvrez un masque à oxygène, une lueur d'espoir dans ce monde oppressant. Ses contours froids et métalliques révèlent une utilité cruciale dans cette réalité étrange. Vous vous demandez pourquoi il est là, si la pièce au-delà de la porte recèle des dangers pour votre souffle ou si c'est un indice pour votre quête. La décision de le prendre ou de le laisser repose sur vos épaules, une nouvelle énigme à résoudre dans ce labyrinthe dystopique.",
+        titre: "À la Découverte du Masque d'oxygène",
+        description: "Vous découvrez une porte déverrouillée, à côté de laquelle se trouve un masque à oxygène.",
         image: "porte.jpg",
-        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "mort" }]
+        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "expose" }]
     },
 
     masque: {
-        titre: "L'éveil au moniteur silencieux",
-        description: "Une fois le masque à oxygène enfilé, une bouffée d'air frais inonde vos poumons, vous protégeant des menaces invisibles qui pourraient rôder. Vous continuez votre chemin avec une assurance nouvelle, avançant plus profondément dans le couloir obscur, déterminé à percer les mystères de ce monde dystopique qui semble être votre nouvelle réalité. Chaque pas est une avancée vers la vérité, vers la compréhension de votre destin incertain. En ouvrant la porte verrouillée, une lumière éblouissante du jour vous submerge, brisant l'obscurité oppressante du couloir. Vous êtes dehors, et une sensation de liberté vous envahit. Le monde extérieur s'étend devant vous, une vision rare dans ce monde dystopique. Les rayons du soleil caressent votre visage, et l'air frais emplit vos poumons. C'est un moment d'évasion bienvenu, mais aussi un rappel que l'énigme qui vous entoure persiste.La révélation que toute votre vie, vous avez respiré un air artificiel fourni par Sentinel, vous glace d'effroi. Vous vous retrouvez face à un dilemme : est-il sage de poursuivre sans masque, en respirant l'air extérieur, ou faut-il continuer à vous protéger avec le masque à oxygène ? Avez-vous votre masque?",
+        titre: "Une protection efficace",
+        description: "Vous tenez un masque dans vos mains et apercevez la lumière du jour. Avez-vous mis votre masque?",
         image: "masque.jpg",
         boutons: [{ titre: 'Vous avez votre masque', destination: 'fin' }, { titre: 'Vous navez pas de masque', destination: 'mort' }]
     },
 
     expose: {
-        titre: "L'éveil au moniteur silencieux",
-        description: "La peur vous saisit, vous hésitez à toucher le masque à oxygène, craignant qu'il ne cache un danger insidieux. Vous le laissez là où il se trouve, préférant continuer votre chemin avec prudence. Le mystère de ce monde oppressant persiste, et vous vous aventurez plus loin dans l'obscurité, conscient que chaque décision peut influencer votre destin dans cette réalité dystopique.En ouvrant la porte verrouillée, une lumière éblouissante du jour vous submerge, brisant l'obscurité oppressante du couloir. Vous êtes dehors, et une sensation de liberté vous envahit. Le monde extérieur s'étend devant vous, une vision rare dans ce monde dystopique. Les rayons du soleil caressent votre visage, et l'air frais emplit vos poumons. C'est un moment d'évasion bienvenu, mais aussi un rappel que l'énigme qui vous entoure persiste. La révélation que toute votre vie, vous avez respiré un air artificiel fourni par Sentinel, vous glace d'effroi. Vous vous retrouvez face à un dilemme : est-il sage de poursuivre sans masque, en respirant l'air extérieur, ou faut-il continuer à vous protéger avec le masque à oxygène ? Avez-vous votre masque?",
+        titre: "Le Masque Oublié",
+        description: "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Avez-vous votre masque?",
         image: "lumiere.jpg",
-        boutons: [{ titre: 'Vous avez votre masque', destination: '' }, { titre: 'Vous navez pas de masque', destination: 'mort' }]
+        boutons: [{ titre: 'Non, vous navez pas de masque', destination: 'debut' }]
     },
 
 
@@ -41,7 +56,7 @@ function goToChapter(cle) {
     if (typeof cle === "object") {
         console.log(cle.titre);
         console.log(cle.description);
-        console.log(cle.boutons);
+        console.log(cle.boutton);
     }
     else {
         console.log("Mauvaise clé de chapitre");
