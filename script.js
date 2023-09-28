@@ -2,7 +2,7 @@ let chapters = {
     debut: {
         titre: "L'éveil au moniteur silencieux",
         description: "Au réveil, vous vous retrouvez attaché aux fils du motineur, emprisonné dans cet univers dystopique où la machine nommée Sentinel contrôle chaque aspect de votre existence.",
-        image: "chambre.jpg",
+        image: "./assets/image/chambre.jpg",
         boutons: [{ titre: 'Relâcher les Câbles', destination: 'explorer' }, { titre: "Se Rendormir ", destination: "rendormir" }]
     },
 
@@ -31,7 +31,7 @@ let chapters = {
         titre: "À la Découverte du Masque d'oxygène",
         description: "Vous découvrez une porte déverrouillée, à côté de laquelle se trouve un masque à oxygène.",
         image: "./assets/image/porte.jpg",
-        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "piege" }]
+        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "chance" }]
     },
 
     masque: {
@@ -41,7 +41,7 @@ let chapters = {
         boutons: [{ titre: 'Oui, vous avez votre masque', destination: 'lumiere' }]
     },
 
-    piege: {
+    chance: {
         titre: "Le Masque Oublié",
         description: "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Avez-vous votre masque?",
         image: "./assets/image/chemin.jpg",
