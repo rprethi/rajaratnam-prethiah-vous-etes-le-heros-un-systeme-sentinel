@@ -31,14 +31,14 @@ let chapters = {
         titre: "À la Découverte du Masque d'oxygène",
         description: "Vous découvrez une porte déverrouillée, à côté de laquelle se trouve un masque à oxygène.",
         image: "./assets/image/porte.jpg",
-        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "chance" }]
+        boutons: [{ titre: "Prendre le masque ", destination: "masque" }, { titre: "Avancer sans prendre de masque", destination: "final" }]
     },
 
     masque: {
         titre: "Une protection efficace",
         description: "Vous tenez un masque dans vos mains et apercevez la lumière du jour. Avez-vous mis votre masque?",
         image: "./assets/image/chemin.jpg",
-        boutons: [{ titre: 'Oui, vous avez votre masque', destination: 'lumiere' }]
+        boutons: [{ titre: 'Oui, vous avez votre masque', destination: 'final' }]
     },
 
     chance: {
@@ -52,11 +52,24 @@ let chapters = {
         titre: "Une autre chance à la vie?",
         description: "Vous avez sauvé votre peau et vous avez échappé à le Sentinel!",
         image: "./assets/image/lumiere.jpg",
+        boutons: [{ titre: 'Bravo', destination: 'debut' }]
     },
+
 };
 
-
+let hasMask = false;
 function goToChapter(chapitre) {
+
+    if(chapitre == 'masque'){
+        hasMask = true;
+    }
+
+    if(chapitre == 'final' && hasMask){
+        goToChapter('lumiere')
+    }else if(chapitre == 'final' && !hasMask){
+        goToChapter('chance')
+    }
+
     if (chapters[chapitre] !== undefined) {
         console.log(chapters[chapitre].titre);
         console.log(chapters[chapitre].description);
