@@ -57,6 +57,7 @@ let chapters = {
 
 };
 
+let twist = false;
 let hasMask = false;
 function goToChapter(chapitre) {
 
