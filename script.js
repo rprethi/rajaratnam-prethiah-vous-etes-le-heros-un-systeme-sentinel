@@ -70,7 +70,17 @@ function goToChapter(chapitre) {
     }else if(chapitre == 'final' && !hasMask){
         goToChapter('chance')
     }
+/* let titreSentinel = document.querySelector("h3");
+let descriptionSentinel = document.querySelector("#texte");
+let imageSentinel = document.querySelector("#image");
+let boutonSentinel = document.querySelector("#bouton");
+titreSentinel.innerText = chapters[chapitre].titre
+descriptionSentinel.innerText = chapters[chapitre].description
+while (boutons.firstChild) { 
 
+  boutons.removeChild(boutons.firstChild); 
+
+}   boutons.appendChild(nouveauBtn);  */
     if (chapters[chapitre] !== undefined) {
         console.log(chapters[chapitre].titre);
         console.log(chapters[chapitre].description);
