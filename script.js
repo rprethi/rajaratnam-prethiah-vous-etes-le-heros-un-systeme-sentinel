@@ -80,7 +80,7 @@ let chapters = {
     boutons: [{ titre: "Bravo", destination: "debut" }],
   },
 };
-
+//Devoir 3.1
 let twist = false;
 let titreSentinel = document.querySelector("h3");
 let descriptionSentinel = document.querySelector("#texte");
@@ -111,7 +111,7 @@ function goToChapter(chapitre) {
       });
       boutons.appendChild(nouveauBtn);
     }
-
+//Devoir 2.2
     console.log(chapters[chapitre].titre);
     console.log(chapters[chapitre].description);
     console.log("Options:");
