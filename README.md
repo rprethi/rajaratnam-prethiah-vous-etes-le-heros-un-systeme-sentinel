@@ -10,4 +10,4 @@
 
 ## Diagramme
 
-![rajaratnam_prethiah_PS1 1__582-324MO](./assets/schema/rajaratnam_prethiah_PS1.1__582-324MO.png)
+![rajaratnam_prethiah_PS1 1__582-324MO](./assets/drawio/rajaratnam_prethiah_PS1.1__582-324MO.png)
