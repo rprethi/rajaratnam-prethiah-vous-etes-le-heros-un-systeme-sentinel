@@ -111,7 +111,7 @@ function goToChapter(chapitre) {
       });
       boutons.appendChild(nouveauBtn);
     }
-//Devoir 2.2
+    //Devoir 2.2
     console.log(chapters[chapitre].titre);
     console.log(chapters[chapitre].description);
     console.log("Options:");
