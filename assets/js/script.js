@@ -81,18 +81,21 @@ let chapters = {
   },
 };
 //Devoir 3.1
-let twist = false;
+let foundMask = false;
 let titreSentinel = document.querySelector("h3");
 let descriptionSentinel = document.querySelector("#texte");
 let imageSentinel = document.querySelector("#image");
 const boutons = document.querySelector(".boutons");
 function goToChapter(chapitre) {
-  if (chapitre == "masque") {
-    twist = true;
+  if (chapitre == "debut") {
+    foundMask = false;
   }
-  if (chapitre == "final" && twist) {
+  if (chapitre == "masque") {
+    foundMask = true;
+  }
+  if (chapitre == "final" && foundMask) {
     goToChapter("lumiere");
-  } else if (chapitre == "final" && !twist) {
+  } else if (chapitre == "final" && !foundMask) {
     goToChapter("air");
   }
 
