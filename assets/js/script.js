@@ -35,7 +35,6 @@ let chapters = {
       "Les voix étranges étaient en réalité des agents de sécurité, et ils vous ont assommé.",
     image: "./assets/image/securite.jpg",
     boutons: [{ titre: "Recommencer ", destination: "debut" }],
-    video: "...",
   },
 
   porte: {
@@ -79,16 +78,11 @@ let chapters = {
       "Vous avez sauvé votre peau et vous avez échappé à le Sentinel!",
     image: "./assets/image/lumiere.jpg",
     boutons: [{ titre: "Bravo", destination: "debut" }],
-    video: "...",
   },
 };
 //Devoir 4.1 
 
-if (video === true){
 
-} else {
-
-}
 //Devoir 3.1
 let foundMask = false;
 let titreSentinel = document.querySelector("h3");
