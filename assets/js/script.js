@@ -80,6 +80,13 @@ let chapters = {
     boutons: [{ titre: "Bravo", destination: "debut" }],
   },
 };
+//Devoir 4.1 
+
+if (video === true){
+
+} else {
+
+}
 //Devoir 3.1
 let foundMask = false;
 let titreSentinel = document.querySelector("h3");
