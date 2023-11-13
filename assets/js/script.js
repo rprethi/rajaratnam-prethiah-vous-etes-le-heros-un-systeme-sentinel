@@ -60,7 +60,7 @@ let chapters = {
       "Vous tenez un masque dans vos mains et apercevez la lumière du jour. Avez-vous mis votre masque?",
     image: "./assets/image/chemin.jpg",
     audio: "./assets/audio/twist.mp3",
-    boutons: [{ titre: "Oui, vous avez votre masque", destination: "final" }],
+    boutons: [{ titre: "Continuer", destination: "final" }],
   },
 
   chance: {
@@ -70,7 +70,7 @@ let chapters = {
     image: "./assets/image/chemin.jpg",
     video: "./assets/video/chance.mp4",
     audio: "./assets/audio/twist.mp3",
-    boutons: [{ titre: "Non, vous navez pas de masque", destination: "air" }],
+    boutons: [{ titre: "Continuer", destination: "air" }],
   },
 
   air: {
@@ -80,7 +80,7 @@ let chapters = {
     image: "./assets/image/chemin.jpg",
     video: "./assets/video/air.mp4",
     audio: "./assets/audio/negatif.mp3",
-    boutons: [{ titre: "Non, vous navez pas de masque", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 
   lumiere: {
@@ -90,7 +90,7 @@ let chapters = {
     image: "./assets/image/lumiere.jpg",
     video: "./assets/video/lumiere.mp4",
     audio: "./assets/audio/victoire.mp3",
-    boutons: [{ titre: "Bravo", destination: "debut" }],
+    boutons: [{ titre: "Recommencer", destination: "debut" }],
   },
 };
 
