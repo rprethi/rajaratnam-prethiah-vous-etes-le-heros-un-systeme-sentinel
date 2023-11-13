@@ -36,7 +36,7 @@ let chapters = {
     titre: "Le Piège des Voix Étranges",
     description:
       "Les voix étranges étaient en réalité des agents de sécurité, et ils vous ont assommé.",
-    //image: "./assets/image/securite.jpg",
+    image: "./assets/image/securite.jpg",
     video: "./assets/video/mystere.mp4",
     audio: "./assets/audio/negatif.mp3",
     boutons: [{ titre: "Recommencer ", destination: "debut" }],
@@ -67,7 +67,7 @@ let chapters = {
     titre: "Le Masque Oublié",
     description:
       "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Avez-vous votre masque?",
-    //image: "./assets/image/chemin.jpg",
+    image: "./assets/image/chemin.jpg",
     video: "./assets/video/chance.mp4",
     audio: "./assets/audio/twist.mp3",
     boutons: [{ titre: "Non, vous navez pas de masque", destination: "air" }],
@@ -77,7 +77,7 @@ let chapters = {
     titre: "L'empoisonnement à l'air ",
     description:
       "Malheureusement, vous êtes empoisonné par l'air de l'extérieur et vous mort!",
-    //image: "./assets/image/chemin.jpg",
+    image: "./assets/image/chemin.jpg",
     video: "./assets/video/air.mp4",
     audio: "./assets/audio/negatif.mp3",
     boutons: [{ titre: "Non, vous navez pas de masque", destination: "debut" }],
@@ -87,13 +87,12 @@ let chapters = {
     titre: "Une autre chance à la vie?",
     description:
       "Vous avez sauvé votre peau et vous avez échappé à le Sentinel!",
-    //image: "./assets/image/lumiere.jpg",
+    image: "./assets/image/lumiere.jpg",
     video: "./assets/video/lumiere.mp4",
     audio: "./assets/audio/victoire.mp3",
     boutons: [{ titre: "Bravo", destination: "debut" }],
   },
 };
-
 
 //Devoir 3.1
 let foundMask = false;
@@ -143,15 +142,3 @@ function goToChapter(chapitre) {
   }
 }
 goToChapter("debut");
-
-/*  // Création d'un "text to speech"
-  let msg = new SpeechSynthesisUtterance();
-  let voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[3];
-  msg.volume = 0.0; // From 0 to 1
-  msg.rate = 1.5; // From 0.1 to 10
-  msg.pitch = 0; // From 0 to 2
-  msg.text = chapters[chapitre].description;
-  msg.lang = "fr";
-
-  speechSynthesis.speak(msg);*/

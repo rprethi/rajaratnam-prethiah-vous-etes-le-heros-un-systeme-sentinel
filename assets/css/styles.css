@@ -22,6 +22,7 @@
   background-color: #1b4332;
   color: #b7e4c7;
   box-sizing: border-box;
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
@@ -36,21 +37,34 @@ h3 {
 p {
   font-family: "Merriweather";
   margin: 15px;
+  letter-spacing: 0.05em;
 }
 
 button {
   background-color: #d8f3dc;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 40px;
   background-color: #d8f3dc;
   color: #2d6a4f;
   font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0.5em 0 0.5em;
+  border: 5px solid  #2d6a4f;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 #bouton {
   justify-content: space-around;
   width: 100%;
   display: flex;
+ 
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.50);
+  cursor: pointer;
 }
 
 #image {
