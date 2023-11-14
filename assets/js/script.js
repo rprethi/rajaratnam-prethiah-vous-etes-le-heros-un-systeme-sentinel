@@ -28,7 +28,7 @@ let chapters = {
     audio: "./assets/audio/positif.mp3",
     boutons: [
       { titre: "Suivre le trajet ", destination: "porte" },
-      { titre: "Suivre les voix étranges", destination: "mystere" },
+      { titre: "Suivre les voix", destination: "mystere" },
     ],
   },
 
@@ -50,7 +50,7 @@ let chapters = {
     audio: "./assets/audio/positif.mp3",
     boutons: [
       { titre: "Prendre le masque ", destination: "masque" },
-      { titre: "Avancer sans prendre de masque", destination: "final" },
+      { titre: "Rien toucher", destination: "final" },
     ],
   },
 
@@ -111,7 +111,7 @@ resetBouton.addEventListener("click", function () {
   localStorage.removeItem("foundMask");
   localStorage.removeItem("chapitre");
   //goToChapter("debut");
-  location.reload()
+  location.reload();
 });
 const audioSentinel = new Audio();
 function goToChapter(chapitre) {
@@ -137,7 +137,10 @@ function goToChapter(chapitre) {
     if (chapters[chapitre].audio !== undefined) {
       audioSentinel.src = chapters[chapitre].audio;
       audioSentinel.volume = 0.2;
-      audioSentinel.play();
+      boutons.addEventListener("click", function () {
+        audioSentinel.play();
+        audioSentinel.currentTime = 0;
+      });
     }
     if (chapters[chapitre].video !== undefined) {
       imageSentinel.style.display = "none";
@@ -147,7 +150,6 @@ function goToChapter(chapitre) {
       videoSentinel.appendChild(sourceVideo);
       sourceVideo.setAttribute("src", chapters[chapitre].video);
       videoSentinel.autoplay = true;
-      videoSentinel.loop = true;
     } else {
       videoSentinel.style.display = "none";
       imageSentinel.style.display = "inline";
