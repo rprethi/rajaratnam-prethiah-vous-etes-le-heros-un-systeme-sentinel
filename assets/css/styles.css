@@ -78,7 +78,7 @@ button:hover {
   margin: 20px;
 }
 
-img {
+img, video {
   max-width: 300px;
   max-height: 300px;
 }

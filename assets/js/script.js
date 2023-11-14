@@ -94,19 +94,37 @@ let chapters = {
   },
 };
 
-//Devoir 3.1
 let foundMask = false;
+const foundMaskStorage = localStorage.getItem("foundMask");
+if (foundMaskStorage !== undefined) {
+  if (foundMaskStorage == "true") {
+    foundMask = true;
+  }
+}
 let titreSentinel = document.querySelector("h3");
 let descriptionSentinel = document.querySelector("#texte");
 let imageSentinel = document.querySelector("#image");
+let videoSentinel = document.querySelector("#video");
 const boutons = document.querySelector(".boutons");
+const resetBouton = document.querySelector("#reset");
+resetBouton.addEventListener("click", function () {
+  localStorage.removeItem("foundMask");
+  localStorage.removeItem("chapitre");
+  //goToChapter("debut");
+  location.reload()
+});
+const audioSentinel = new Audio();
 function goToChapter(chapitre) {
+  localStorage.setItem("chapitre", chapitre);
+
   if (chapitre == "debut") {
     foundMask = false;
   }
   if (chapitre == "masque") {
     foundMask = true;
+    localStorage.setItem("foundMask", "true");
   }
+
   if (chapitre == "final" && foundMask) {
     goToChapter("lumiere");
   } else if (chapitre == "final" && !foundMask) {
@@ -116,7 +134,26 @@ function goToChapter(chapitre) {
   if (chapters[chapitre] !== undefined) {
     titreSentinel.innerText = chapters[chapitre].titre;
     descriptionSentinel.innerText = chapters[chapitre].description;
-    imageSentinel.src = chapters[chapitre].image;
+    if (chapters[chapitre].audio !== undefined) {
+      audioSentinel.src = chapters[chapitre].audio;
+      audioSentinel.volume = 0.2;
+      audioSentinel.play();
+    }
+    if (chapters[chapitre].video !== undefined) {
+      imageSentinel.style.display = "none";
+      videoSentinel.style.display = "inline";
+      videoSentinel.src = chapters[chapitre].video;
+      const sourceVideo = document.createElement("source");
+      videoSentinel.appendChild(sourceVideo);
+      sourceVideo.setAttribute("src", chapters[chapitre].video);
+      videoSentinel.autoplay = true;
+      videoSentinel.loop = true;
+    } else {
+      videoSentinel.style.display = "none";
+      imageSentinel.style.display = "inline";
+      imageSentinel.src = chapters[chapitre].image;
+    }
+
     while (boutons.firstChild) {
       boutons.removeChild(boutons.firstChild);
     }
@@ -141,4 +178,9 @@ function goToChapter(chapitre) {
     console.log("Mauvaise clé de chapitre");
   }
 }
-goToChapter("debut");
+const chapitreStorage = localStorage.getItem("chapitre");
+if (chapitreStorage !== null && chapitreStorage !== "debut") {
+  goToChapter(chapitreStorage);
+} else {
+  goToChapter("debut");
+}
