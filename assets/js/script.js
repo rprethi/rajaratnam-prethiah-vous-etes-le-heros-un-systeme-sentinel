@@ -50,7 +50,7 @@ let chapters = {
     audio: "./assets/audio/positif.mp3",
     boutons: [
       { titre: "Prendre le masque ", destination: "masque" },
-      { titre: "Rien toucher", destination: "final" },
+      { titre: "Rien toucher", destination: "chance" },
     ],
   },
 
@@ -59,6 +59,7 @@ let chapters = {
     description:
       "Vous tenez un masque dans vos mains et apercevez la lumière du jour. Avez-vous mis votre masque?",
     image: "./assets/image/chemin.jpg",
+    video: "./assets/video/chance.mp4",
     audio: "./assets/audio/twist.mp3",
     boutons: [{ titre: "Continuer", destination: "final" }],
   },
@@ -66,7 +67,7 @@ let chapters = {
   chance: {
     titre: "Le Masque Oublié",
     description:
-      "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Avez-vous votre masque?",
+      "Vous choisissez de ne rien toucher et de ne pas prendre le masque et vous êtes à l'extérieur et contemplez la lumière du jour. Est-ce le masque un piège?",
     image: "./assets/image/chemin.jpg",
     video: "./assets/video/chance.mp4",
     audio: "./assets/audio/twist.mp3",
@@ -76,7 +77,7 @@ let chapters = {
   air: {
     titre: "L'empoisonnement à l'air ",
     description:
-      "Malheureusement, vous êtes empoisonné par l'air de l'extérieur et vous mort!",
+      "Malheureusement, vous êtes empoisonné par l'air de l'extérieur et vous êtes mort!",
     image: "./assets/image/chemin.jpg",
     video: "./assets/video/air.mp4",
     audio: "./assets/audio/negatif.mp3",
@@ -106,25 +107,23 @@ let descriptionSentinel = document.querySelector("#texte");
 let imageSentinel = document.querySelector("#image");
 let videoSentinel = document.querySelector("#video");
 const boutons = document.querySelector(".boutons");
-const resetBouton = document.querySelector("#reset");
-resetBouton.addEventListener("click", function () {
-  localStorage.removeItem("foundMask");
-  localStorage.removeItem("chapitre");
-  //goToChapter("debut");
-  location.reload();
-});
 const audioSentinel = new Audio();
+
 function goToChapter(chapitre) {
   localStorage.setItem("chapitre", chapitre);
 
   if (chapitre == "debut") {
     foundMask = false;
+    localStorage.removeItem("foundMask");
   }
   if (chapitre == "masque") {
     foundMask = true;
     localStorage.setItem("foundMask", "true");
   }
-
+  if (chapitre == "chance") {
+    foundMask = false;
+    localStorage.setItem("foundMask", "false");
+  }
   if (chapitre == "final" && foundMask) {
     goToChapter("lumiere");
   } else if (chapitre == "final" && !foundMask) {
@@ -142,6 +141,7 @@ function goToChapter(chapitre) {
         audioSentinel.currentTime = 0;
       });
     }
+
     if (chapters[chapitre].video !== undefined) {
       imageSentinel.style.display = "none";
       videoSentinel.style.display = "inline";
@@ -159,6 +159,7 @@ function goToChapter(chapitre) {
     while (boutons.firstChild) {
       boutons.removeChild(boutons.firstChild);
     }
+
     for (let i = 0; i < chapters[chapitre].boutons.length; i++) {
       const nouveauBtn = document.createElement("button");
       nouveauBtn.textContent = chapters[chapitre].boutons[i].titre;
@@ -167,7 +168,16 @@ function goToChapter(chapitre) {
       });
       boutons.appendChild(nouveauBtn);
     }
-    //Devoir 2.2
+
+    const resetBouton = document.createElement("button");
+    resetBouton.textContent = "Réinitialiser";
+    resetBouton.addEventListener("click", () => {
+      localStorage.removeItem("foundMask");
+      localStorage.removeItem("chapitre");
+      location.reload();
+    });
+    boutons.appendChild(resetBouton);
+
     console.log(chapters[chapitre].titre);
     console.log(chapters[chapitre].description);
     console.log("Options:");
@@ -180,6 +190,7 @@ function goToChapter(chapitre) {
     console.log("Mauvaise clé de chapitre");
   }
 }
+
 const chapitreStorage = localStorage.getItem("chapitre");
 if (chapitreStorage !== null && chapitreStorage !== "debut") {
   goToChapter(chapitreStorage);
