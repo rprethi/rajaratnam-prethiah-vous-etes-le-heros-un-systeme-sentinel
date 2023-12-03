@@ -109,6 +109,18 @@ let videoSentinel = document.querySelector("#video");
 const boutons = document.querySelector(".boutons");
 const audioSentinel = new Audio();
 
+let togglemute = document.querySelector("#togglemute");
+const storageToggleMute = localStorage.getItem("togglemute");
+if (storageToggleMute === "true") {
+  togglemute.checked = true;
+} else {
+  togglemute.checked = false;
+}
+togglemute.addEventListener("change", function () {
+  audioSentinel.muted = this.checked;
+  localStorage.setItem("togglemute", this.checked);
+});
+
 function goToChapter(chapitre) {
   localStorage.setItem("chapitre", chapitre);
 

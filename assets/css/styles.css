@@ -4,8 +4,7 @@
 }
 
 @font-face {
-  src: url("../font/Merriweather/Merriweather-Regular.ttf")
-    format("truetype");
+  src: url("../font/Merriweather/Merriweather-Regular.ttf") format("truetype");
   font-family: "Merriweather";
 }
 
@@ -25,12 +24,15 @@
   border: 5px solid;
   border-radius: 30px;
   box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+  padding: 10px;
 }
 
 h1 {
   font-family: "Machine";
   font-size: 100px;
   letter-spacing: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 h3 {
@@ -54,35 +56,48 @@ button {
   margin: 0 0.5em 0 0.5em;
   border: 2px solid #2d6a4f;
   font-family: "Merriweather", serif;
+  margin: 5px;
 }
 
 #bouton {
   justify-content: space-around;
   width: 100%;
   display: flex;
- 
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.50);
+  box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  background-color:#b7e4c7;
+  background-color: #b7e4c7;
 }
 
 #image {
-  max-width: 100%;
+  max-width: 90%;
   vertical-align: middle;
   justify-content: center;
   display: flex;
   margin: 20px;
 }
 
-img, video {
+img,
+video {
   max-width: 300px;
   max-height: 300px;
 }
 
 body {
   background-color: #74c690;
+}
+
+@media screen and (max-width: 610px) {
+  #bouton {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  h1 {
+    font-size: 80px;
+  }
 }
